@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void Swap(int *x, int *y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+
 int partition(int a[], int low, int high) {
 
   int pivot = a[low];
@@ -14,10 +20,10 @@ int partition(int a[], int low, int high) {
       j--;
     }
     if (i < j) {
-      swap(a[i], a[j]);
+      Swap(&a[i], &a[j]);
     }
   }
-  swap(a[low], a[j]);
+  Swap(&a[low], &a[j]);
   return j;
 }
 
